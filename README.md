@@ -1,4 +1,4 @@
 # Kelompok 6
 
-## - Indra Naufal Firdaus / 123240195
-## - Rio Adhi Permana / 123240206
+- _Indra Naufal Firdaus / 123240195_
+- _Rio Adhi Permana / 123240206_
