@@ -63,7 +63,7 @@ $result = $stmt->get_result();
                 <?php endif; ?>
 
                 <div class="table-responsive text-center rounded-4">
-                    <table class="table table-borderless">
+                    <table class="table table-striped table-borderless">
                         <thead class="table-dark">
                             <tr>
                                 <th>No</th>
