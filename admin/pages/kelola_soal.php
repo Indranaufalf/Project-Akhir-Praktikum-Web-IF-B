@@ -62,9 +62,9 @@ $query_soal = $stmt_soal->get_result();
         </div>
     </nav>
 
-    <div class="container mt-4">
-        <div class="card">
-            <div class="card-header bg-dark text-white">
+    <div class="container mt-4 mb-5">
+        <div class="card shadow border-0 ">
+            <div class="card-header bg-dark text-white ">
                 <h4 class="mb-0">Kelola Soal</h4>
             </div>
             <div class="card-body">
@@ -83,7 +83,6 @@ $query_soal = $stmt_soal->get_result();
                                 <select name="paket" class="form-select">
                                     <option value="">-- Semua Paket Soal --</option>
                                     <?php 
-                                    // Reset pointer untuk query_paket
                                     $query_paket->data_seek(0);
                                     while($p = $query_paket->fetch_assoc()): 
                                     ?>
@@ -94,21 +93,21 @@ $query_soal = $stmt_soal->get_result();
                                 </select>
                             </div>
                             <div class="col-md-4">
-                                <button type="submit" class="btn btn-warning">Filter</button>
-                                <a href="kelola_soal.php" class="btn btn-secondary">Reset</a>
+                                <button type="submit" class="btn btn-secondary rounded-4">Filter</button>
+                                <a href="kelola_soal.php" class="btn btn-secondary rounded-4">Reset</a>
                             </div>
                         </form>
                     </div>
                     <div class="col-md-4 text-end">
-                        <button class="btn btn-success" data-bs-toggle="modal" data-bs-target="#modalTambah">
-                            + Tambah Soal
+                        <button class="btn btn-secondary rounded-4" data-bs-toggle="modal" data-bs-target="#modalTambah">
+                            Tambah Soal
                         </button>
                     </div>
                 </div>
 
     <section class="tabel soal">
-                <div class="table-responsive">
-                    <table class="table table-striped">
+                <div class="table-responsive rounded-4 text-center">
+                    <table class="table table-striped table-borderless">
                         <thead class="table-dark">
                             <tr>
                                 <th width="5%">No</th>
@@ -146,12 +145,12 @@ $query_soal = $stmt_soal->get_result();
                                 </td>
                                 <td class="text-center"><?php echo htmlspecialchars($s['bobot']); ?></td>
                                 <td>
-                                    <button class="btn btn-sm btn-warning" 
+                                    <button class="btn btn-sm btn-secondary rounded-4" 
                                             onclick='editSoal(<?php echo json_encode($s); ?>)'>
                                         Edit
                                     </button>
                                     <a href="../proses/proses_hapus_soal.php?id=<?php echo htmlspecialchars($s['id']); ?>&paket=<?php echo htmlspecialchars($s['paket_soal']); ?>" 
-                                       class="btn btn-sm btn-danger"
+                                       class="btn btn-sm btn-secondary rounded-4"
                                        onclick="return confirm('Yakin hapus soal ini?')">
                                         Hapus
                                     </a>
@@ -175,7 +174,7 @@ $query_soal = $stmt_soal->get_result();
         <div class="modal-dialog modal-lg">
             <div class="modal-content">
                 <form method="POST" action="../proses/proses_tambah_soal.php">
-                    <div class="modal-header bg-success text-white">
+                    <div class="modal-header bg-dark text-white">
                         <h5 class="modal-title">Tambah Soal</h5>
                         <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
                     </div>
@@ -241,7 +240,7 @@ $query_soal = $stmt_soal->get_result();
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Batal</button>
-                        <button type="submit" class="btn btn-success">Simpan</button>
+                        <button type="submit" class="btn btn-secondary">Simpan</button>
                     </div>
                 </form>
             </div>
@@ -255,9 +254,9 @@ $query_soal = $stmt_soal->get_result();
             <div class="modal-content">
                 <form method="POST" action="../proses/proses_edit_soal.php">
                     <input type="hidden" name="id_soal" id="edit_id">
-                    <div class="modal-header bg-warning">
+                    <div class="modal-header bg-dark text-white">
                         <h5 class="modal-title">Edit Soal</h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
                     </div>
                     <div class="modal-body">
                         <div class="mb-3">
@@ -319,7 +318,7 @@ $query_soal = $stmt_soal->get_result();
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Batal</button>
-                        <button type="submit" class="btn btn-warning">Update</button>
+                        <button type="submit" class="btn btn-secondary">Update</button>
                     </div>
                 </form>
             </div>

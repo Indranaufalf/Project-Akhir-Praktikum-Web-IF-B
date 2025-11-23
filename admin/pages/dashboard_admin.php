@@ -91,12 +91,11 @@ $result_list_paket = $stmt_list->get_result();
             <hr>
 
             <div class="d-flex gap-2">
-                <a href="kelola_soal.php" class="btn btn-dark">Kelola Soal</a>
-                <a href="kelola_paket.php" class="btn btn-dark">Kelola Paket Soal</a>
+                <a href="kelola_paket.php" class="btn btn-secondary rounded-4">Kelola Paket Soal</a>
             </div>
         </div>
-        <div class="table-responsive rounded-4">
-            <table class="table table-striped table-bordered bg-white">
+        <div class="table-responsive rounded-4 text-center mb-5">
+            <table class="table table-striped bg-white">
                 <thead class="table-dark">
                     <tr>
                         <th>No</th>
@@ -125,7 +124,7 @@ $result_list_paket = $stmt_list->get_result();
                         <td><?php echo htmlspecialchars($paket['jumlah_soal_tersedia']); ?></td>
                         <td><span class="badge <?php echo $badge_class; ?>"><?php echo $status; ?></span></td>
                         <td>
-                            <a href="kelola_soal.php?paket=<?php echo htmlspecialchars($paket['id_paket']); ?>" class="btn btn-sm btn-dark">Kelola Soal</a>
+                            <a href="kelola_soal.php?paket=<?php echo htmlspecialchars($paket['id_paket']); ?>" class="btn btn-sm btn-secondary rounded-4">Kelola Soal</a>
                         </td>
                     </tr>
                     <?php endwhile; ?>

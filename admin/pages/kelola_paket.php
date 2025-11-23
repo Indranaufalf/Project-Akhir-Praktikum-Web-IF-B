@@ -45,12 +45,12 @@ $result = $stmt->get_result();
     </nav>
 
 
-    <div class="container mt-4">
-        <div class="card">
+    <div class="container mt-4 mb-5 ">
+        <div class="card bg-transparent shadow border-0">
             <div class="card-header bg-dark text-white d-flex justify-content-between align-items-center">
                 <h4 class="mb-0">Kelola Paket Soal</h4>
-                <button class="btn btn-light btn-sm" data-bs-toggle="modal" data-bs-target="#modalTambah">
-                    + Tambah Paket
+                <button class="btn btn-secondary btn-sm rounded-4" data-bs-toggle="modal" data-bs-target="#modalTambah">
+                    Tambah Paket
                 </button>
             </div>
             <div class="card-body">
@@ -62,8 +62,8 @@ $result = $stmt->get_result();
                     </div>
                 <?php endif; ?>
 
-                <div class="table-responsive">
-                    <table class="table table-striped">
+                <div class="table-responsive text-center rounded-4">
+                    <table class="table table-borderless">
                         <thead class="table-dark">
                             <tr>
                                 <th>No</th>
@@ -86,12 +86,12 @@ $result = $stmt->get_result();
                                 <td><?php echo htmlspecialchars($data['kelas']); ?></td>
                                 <td><?php echo htmlspecialchars($data['jumlah_soal']); ?></td>
                                 <td>
-                                    <button class="btn btn-sm btn-warning" 
+                                    <button class="btn btn-sm btn-secondary rounded-4" 
                                             onclick="editPaket(<?php echo htmlspecialchars(json_encode($data)); ?>)">
                                         Edit
                                     </button>
                                     <a href="../proses/proses_hapus_paket.php?id=<?php echo htmlspecialchars($data['id_paket']); ?>" 
-                                       class="btn btn-sm btn-danger"
+                                       class="btn btn-sm btn-secondary rounded-4"
                                        onclick="return confirm('Yakin hapus paket ini?')">
                                         Hapus
                                     </a>
@@ -109,7 +109,7 @@ $result = $stmt->get_result();
         <div class="modal-dialog">
             <div class="modal-content">
                 <form method="POST" action="../proses/proses_tambah_paket.php">
-                    <div class="modal-header bg-success text-white">
+                    <div class="modal-header bg-dark text-white">
                         <h5 class="modal-title">Tambah Paket Soal</h5>
                         <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
                     </div>
@@ -145,7 +145,7 @@ $result = $stmt->get_result();
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Batal</button>
-                        <button type="submit" class="btn btn-success">Simpan</button>
+                        <button type="submit" class="btn btn-secondary">Simpan</button>
                     </div>
                 </form>
             </div>
@@ -157,9 +157,9 @@ $result = $stmt->get_result();
             <div class="modal-content">
                 <form method="POST" action="../proses/proses_edit_paket.php">
                     <input type="hidden" name="id_paket" id="edit_id">
-                    <div class="modal-header bg-warning">
+                    <div class="modal-header bg-dark text-white">
                         <h5 class="modal-title">Edit Paket Soal</h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
                     </div>
                     <div class="modal-body">
                         <div class="mb-3">
@@ -189,7 +189,7 @@ $result = $stmt->get_result();
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Batal</button>
-                        <button type="submit" class="btn btn-warning">Update</button>
+                        <button type="submit" class="btn btn-secondary">Update</button>
                     </div>
                 </form>
             </div>
