@@ -126,8 +126,6 @@ $result = $stmt->get_result();
                                 <option value="Matematika">Matematika</option>
                                 <option value="IPA">IPA</option>
                                 <option value="Bahasa Indonesia">Bahasa Indonesia</option>
-                                <option value="IPS">IPS</option>
-                                <option value="PKN">PKN</option>
                             </select>
                         </div>
                         <div class="mb-3">
